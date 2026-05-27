@@ -104,7 +104,7 @@ async function generarQR() {
 
     // Generar QR — contiene la URL de la página del alumno + token
     document.getElementById("qrcode").innerHTML = "";
-const alumnoURL = "https://cpalazzi-source.github.io/Asistencia-DG3-2026/Alumno.html"
+const alumnoURL = window.location.href.replace("Profesor.html", "Alumno.html")
                   + "?token=" + encodeURIComponent(res.token)
                   + "&expiry=" + res.expiry;
     new QRCode(document.getElementById("qrcode"), { text: alumnoURL, width: 200, height: 200 });
